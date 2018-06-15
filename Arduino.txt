@@ -1,0 +1,15 @@
+#define Led 13
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(Led,OUTPUT);
+}
+
+void loop() {
+ if(Serial.available()){
+  char k=Serial.read();
+  if(k=='1')digitalWrite(Led,HIGH);
+  if(k=='0')digitalWrite(Led,LOW);
+ }
+
+}
